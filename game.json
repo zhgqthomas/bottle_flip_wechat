@@ -1,0 +1,10 @@
+{
+    "deviceOrientation": "portrait",
+    "networkTimeout": {
+        "request": 2000,
+        "connectSocket": 5000
+    },
+    "navigateToMiniProgramAppIdList": [
+        "wx98bb879bbb53ad81"
+    ]
+}

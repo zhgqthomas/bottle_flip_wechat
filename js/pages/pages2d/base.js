@@ -25,9 +25,6 @@ function n(e, t) {
 }
 
 function r(e) {
-    console.log('g: ', g);
-    console.log('w: ', w);
-    console.log('d: ', d);
     var t = e * g / 414;
     return w / g < 736 / 414 && (t = e * w / 736), t * d;
 }
@@ -43,7 +40,6 @@ function a(e) {
 
 function s(e, t) {
     var n = e * d * g / 414;
-    console.log('V : ', V);
     return w / g < 736 / 414 && (n = e * d * w / 736), t && V ? n + "px " + V : n + "px Helvetica";
 }
 
@@ -116,7 +112,6 @@ Object.defineProperty(exports, "__esModule", {
         if (n(e, t), e.showState = !0, !e.canvas.bg) {
             T && (y = ["sample", "btn", "list1", "list2", "bg"]);
             for (var o = 0; o < y.length; o++) {
-                console.log('type: ', y[o]);
                 e.canvas[y[o]] = document.createElement("canvas");
                 e.context[y[o]] = e.canvas[y[o]].getContext("2d");
                 e.canvas[y[o]].width = m;
@@ -127,7 +122,6 @@ Object.defineProperty(exports, "__esModule", {
                     transparent: !0
                 });
                 "list1" == y[o] || "list2" == y[o] ? e.geometry[y[o]] = new u.PlaneBufferGeometry(b, r(720) / x * h) : e.geometry[y[o]] = new u.PlaneBufferGeometry(b, h);
-                console.log('h: ', h);
                 e.obj[y[o]] = new u.Mesh(e.geometry[y[o]], e.material[y[o]]);
                 e.material[y[o]].map.minFilter = u.LinearFilter;
                 e.obj[y[o]].position.y = 0;

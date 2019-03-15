@@ -51,13 +51,19 @@ var a = Object.assign || function(t) {
                 e.msg_list.length < t.page_count && (t.arriveLastPage = !0);
                 var a = t.handleServerData(e);
                 t.oldData = a, t.showPage(a);
-            }, function(t) {
+            }, function(m) {
                 console.log("request fail", t), wx.hideLoading(), wx.showToast({
                     icon: "none",
                     mask: !1,
                     title: "网络繁忙",
                     duration: 800
                 });
+
+                if (wx.hideLoading(), !e || !e.msg_list || !e.msg_list.length) return t.arriveLastPage = !0, 
+                t.oldData = [], void t.showPage([]);
+                e.msg_list.length < t.page_count && (t.arriveLastPage = !0);
+                var a = t.handleServerData(e);
+                t.oldData = a, t.showPage(a);
             }); else {
                 var a = this.oldData || [];
                 this.showPage(a);

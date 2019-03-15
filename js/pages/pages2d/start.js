@@ -94,7 +94,7 @@ Object.defineProperty(exports, "__esModule", {
         size: 15,
         pos: [207, 401]
     }));
-     (0, e.updatePlane)({
+    (0, e.updatePlane)({
         self: t,
         type: "bg"
     });
@@ -102,7 +102,7 @@ Object.defineProperty(exports, "__esModule", {
     var i = t.context.btn;
     i.fillStyle = "red", i.beginPath(), i.arc((0, e.cx)(230), (0, e.cy)(650), (0, e.cwh)(5), 0, 2 * Math.PI),
         i.stroke(), i.fill();
-        (0, e.updatePlane)({
+    (0, e.updatePlane)({
         self: t,
         type: "btn"
     });

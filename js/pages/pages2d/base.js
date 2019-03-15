@@ -143,24 +143,40 @@ Object.defineProperty(exports, "__esModule", {
     var n = e.self;
     n.p0 || (n.p0 = new u.Vector3(0, 0, 9), n.p1 = new u.Vector3(-b * (.5 - o(30) / m), (.5 - a(157) / x) * h, 9),
         n.p2 = new u.Vector3(b * (.5 - o(30) / m), h * (.5 - a(157) / x), 9), n.p3 = new u.Vector3(b * (.5 - o(30) / m), -h * (.5 - a(218) / x), 9),
-        n.p4 = new u.Vector3(-b * (.5 - o(30) / m), -h * (.5 - a(218) / x), 9)), n.p5 || (n.p5 = new u.Vector3(-b * (.5 - o(30) / m), -h * (.5 - a(299) / x), 9),
+        n.p4 = new u.Vector3(-b * (.5 - o(30) / m), -h * (.5 - a(218) / x), 9));
+    n.p5 || (n.p5 = new u.Vector3(-b * (.5 - o(30) / m), -h * (.5 - a(299) / x), 9),
         n.p6 = new u.Vector3(b * (.5 - o(30) / m), -h * (.5 - a(299) / x), 9), n.p7 = new u.Vector3(b * (.5 - o(30) / m), -h * (.5 - a(104) / x), 9),
-        n.p8 = new u.Vector3(-b * (.5 - o(30) / m), -h * (.5 - a(104) / x), 9)), n.p9 || (n.p9 = new u.Vector3(-b * (.5 - o(30) / m), -h * (.5 - a(332) / x), 9),
+        n.p8 = new u.Vector3(-b * (.5 - o(30) / m), -h * (.5 - a(104) / x), 9));
+    n.p9 || (n.p9 = new u.Vector3(-b * (.5 - o(30) / m), -h * (.5 - a(332) / x), 9),
         n.p10 = new u.Vector3(b * (.5 - o(30) / m), -h * (.5 - a(332) / x), 9), n.p11 = new u.Vector3(b * (.5 - o(30) / m), -h * (.5 - a(175) / x), 9),
-        n.p12 = new u.Vector3(-b * (.5 - o(30) / m), -h * (.5 - a(175) / x), 9)), n.p13 || (n.p13 = new u.Vector3(-b * (.5 - o(30) / m), (.5 - a(318) / x) * h, 9),
+        n.p12 = new u.Vector3(-b * (.5 - o(30) / m), -h * (.5 - a(175) / x), 9));
+    n.p13 || (n.p13 = new u.Vector3(-b * (.5 - o(30) / m), (.5 - a(318) / x) * h, 9),
         n.p14 = new u.Vector3(b * (.5 - o(30) / m), h * (.5 - a(318) / x), 9), n.p15 = new u.Vector3(b * (.5 - o(30) / m), -h * (.5 - a(176) / x), 9),
-        n.p16 = new u.Vector3(-b * (.5 - o(30) / m), -h * (.5 - a(176) / x), 9)), n.p17 || (n.p17 = new u.Vector3(-b * (.5 - o(30) / m), (.5 - a(136) / x) * h, 9),
+        n.p16 = new u.Vector3(-b * (.5 - o(30) / m), -h * (.5 - a(176) / x), 9));
+    n.p17 || (n.p17 = new u.Vector3(-b * (.5 - o(30) / m), (.5 - a(136) / x) * h, 9),
         n.p18 = new u.Vector3(b * (.5 - o(30) / m), h * (.5 - a(136) / x), 9), n.p19 = new u.Vector3(b * (.5 - o(30) / m), -h * (.5 - a(118) / x), 9),
-        n.p20 = new u.Vector3(-b * (.5 - o(30) / m), -h * (.5 - a(118) / x), 9)), n.p21 || (n.p21 = new u.Vector3(-b * (.5 - o(30) / m), (.5 - a(278) / x) * h, 9),
+        n.p20 = new u.Vector3(-b * (.5 - o(30) / m), -h * (.5 - a(118) / x), 9));
+    n.p21 || (n.p21 = new u.Vector3(-b * (.5 - o(30) / m), (.5 - a(278) / x) * h, 9),
         n.p22 = new u.Vector3(b * (.5 - o(30) / m), h * (.5 - a(278) / x), 9), n.p23 = new u.Vector3(b * (.5 - o(30) / m), -h * (.5 - a(157) / x), 9),
         n.p24 = new u.Vector3(-b * (.5 - o(30) / m), -h * (.5 - a(157) / x), 9));
+
+
     var r = n.p0.clone(), s = n.p1.clone(), p = n.p2.clone(), i = n.p3.clone(), l = n.p4.clone();
-    n.canvasType == v.pk && (s = n.p5.clone(), p = n.p6.clone(), i = n.p7.clone(), l = n.p8.clone()),
+
+    n.canvasType == v.pk && (s = n.p5.clone(), p = n.p6.clone(), i = n.p7.clone(), l = n.p8.clone());
+
     n.canvasType == v.relayRank && (s = n.p9.clone(), p = n.p10.clone(), i = n.p11.clone(),
         l = n.p12.clone(), 1 != n.opt.my_rank && (s = n.p13.clone(), p = n.p14.clone(),
-        i = n.p15.clone(), l = n.p16.clone())), n.canvasType == v.msgBox && (s = n.p17.clone(),
-        p = n.p18.clone(), i = n.p19.clone(), l = n.p20.clone()), n.canvasType == v.shareSkin && (s = n.p21.clone(),
-        p = n.p22.clone(), i = n.p23.clone(), l = n.p24.clone()), n.options.camera.updateMatrixWorld();
+        i = n.p15.clone(), l = n.p16.clone()));
+
+    n.canvasType == v.msgBox && (s = n.p17.clone(),
+        p = n.p18.clone(), i = n.p19.clone(), l = n.p20.clone());
+
+    n.canvasType == v.shareSkin && (s = n.p21.clone(),
+        p = n.p22.clone(), i = n.p23.clone(), l = n.p24.clone());
+
+    n.options.camera.updateMatrixWorld();
+
     var c = n.options.camera.matrixWorld;
     r.applyMatrix4(c), s.applyMatrix4(c), p.applyMatrix4(c), i.applyMatrix4(c), l.applyMatrix4(c);
     var f = new u.Triangle(p, s), d = f.plane();

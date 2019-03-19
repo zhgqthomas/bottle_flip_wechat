@@ -78,6 +78,7 @@ require("./shareApp")), x = t(require("./viewer")), w = require("./lib/animation
         key: "update",
         value: function(t) {
             var e = this;
+            this.showCombo();
             this.tailSystem && this.tailSystem.update(1e3 * t), this.bottle.update(t), this.renderer.shadowMap.enabled && (this.shadowTarget.position.x = this.bottle.obj.position.x, 
             this.shadowTarget.position.z = this.bottle.obj.position.z, this.shadowLight.position.x = this.bottle.obj.position.x + 0, 
             this.shadowLight.position.z = this.bottle.obj.position.z + 10);
@@ -735,9 +736,19 @@ require("./shareApp")), x = t(require("./viewer")), w = require("./lib/animation
     }, {
         key: "touchStartAnim",
         value: function(t) {
-            "prepare" != this.bottle.status && (this.stopBlockMusic(), this.bottle.prepare(), 
-            this.currentBlock.shrink(), t && t.fromGuider || (this.audioManager.scale_intro.seek(0), 
-            this.audioManager.scale_intro.play(), this.mouseDownTime = Date.now(), this.onceTouchMoveList = []));
+            if ("prepare" != this.bottle.status) {
+                this.stopBlockMusic();
+                this.bottle.prepare();
+                this.currentBlock.shrink();
+                if (t && t.fromGuider)  {
+
+                } else {
+                    this.audioManager.scale_intro.seek(0)
+                    this.audioManager.scale_intro.play()
+                    this.mouseDownTime = Date.now();
+                    this.onceTouchMoveList = [];
+                }
+            }
         }
     }, {
         key: "touchEndAnim",
@@ -849,6 +860,9 @@ require("./shareApp")), x = t(require("./viewer")), w = require("./lib/animation
                 e.nextBlock && (e.nextBlock.obj.visible = !1));
             }), e.gameSocket.onRelayCmdCome(e.relayInstructionCtrl.cmdCome.bind(e.relayInstructionCtrl)), 
             canvas.addEventListener("touchstart", function(t) {
+                console.log('touchstart');
+                console.log('mode: ', e.mode);
+                console.log('stage: ', e.stage);
                 if (!e.pendingReset) if (t.touches.length >= 2) e.touchObserve = !0; else if ("relay" == e.mode && "game" == e.stage && e.full2D.doTouchStartEvent(t), 
                 "relay" != e.mode || "game" != e.stage || !e.clicked && e.myTurn) if (e.gameCtrl.reviewCtrl.isInThisPage) e.gameCtrl.reviewCtrl.reviewPage.doTouchStartEvent(t); else {
                     if ("single" == e.mode || "player" == e.mode) {
@@ -870,8 +884,12 @@ require("./shareApp")), x = t(require("./viewer")), w = require("./lib/animation
                 }
             });
             canvas.addEventListener("touchcancel", function(t) {
+                console.log('touchcancel');
                 e.handleInterrupt();
             }), canvas.addEventListener("touchend", function(t) {
+                console.log('touchend');
+                console.log('mode: ', e.mode);
+                console.log('stage: ', e.stage);
                 t.changedTouches[0].clientX, t.changedTouches[0].clientY;
                 if ("relay" == e.mode && "game" == e.stage && e.full2D.doTouchEndEvent(t), "relay" != e.mode || "game" != e.stage || !e.clicked && e.myTurn) if (e.gameCtrl.reviewCtrl.isInThisPage) e.gameCtrl.reviewCtrl.reviewPage.doTouchEndEvent(t); else if ("singleSettlementPgae" != e.stage && "startPage" != e.stage) if ("viewerWaiting" != e.stage && "viewerGG" != e.stage && "viewerOut" != e.stage) if ("friendRankList" != e.stage) if ("battlePage" != e.stage) if ("groupRankList" != e.stage) {
                     if ("getGiftPage" != e.mode) return "relayRoom" == e.stage ? (console.log(e.stage), 
@@ -937,6 +955,7 @@ require("./shareApp")), x = t(require("./viewer")), w = require("./lib/animation
                     e.full2D.doTouchEndEvent(t);
                 } else e.full2D.doTouchEndEvent(t); else e.full2D.doTouchEndEvent(t); else e.full2D.doTouchEndEvent(t); else e.full2D.doTouchEndEvent(t); else e.full2D.doTouchEndEvent(t);
             }), canvas.addEventListener("touchmove", function(t) {
+                console.log('touchMove');
                 if ("relay" == e.mode && "game" == e.stage && e.full2D.doTouchMoveEvent(t), "getGiftPage" != e.mode) {
                     if (e.gameCtrl.reviewCtrl.isInThisPage && e.gameCtrl.reviewCtrl.reviewPage.doTouchMoveEvent(t), 
                     "prepare" == e.bottle.status) {

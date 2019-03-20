@@ -45,7 +45,8 @@ var i = function() {
             });
             for (var s = 0; s < 20; s++) {
                 var a = new n(this.geometry, this.material);
-                this.scene.add(a.mesh), this.tailsRemainPool.push(a);
+                this.scene.add(a.mesh);
+                this.tailsRemainPool.push(a);
             }
         }
     }, {

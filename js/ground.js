@@ -41,7 +41,9 @@ var r = function() {
             vertexShader: r,
             fragmentShader: n
         });
-        this.ground = new t.Mesh(s, m), this.obj.add(this.ground), this.colors = [ {
+        this.ground = new t.Mesh(s, m);
+        this.obj.add(this.ground);
+        this.colors = [ {
             topColor: [ 215, 219, 230 ],
             bottomColor: [ 188, 190, 199 ]
         }, {
@@ -62,12 +64,18 @@ var r = function() {
         }, {
             topColor: [ 217, 218, 246 ],
             bottomColor: [ 164, 172, 212 ]
-        } ], this.current = 0;
+        } ];
+        this.current = 0;
     }
     return r(a, [ {
         key: "changeColor",
         value: function() {
-            var o = this, r = this.current + 1 > 6 ? 0 : this.current + 1, e = [ 255 * this.ground.material.uniforms.topColor.value.r, 255 * this.ground.material.uniforms.topColor.value.g, 255 * this.ground.material.uniforms.topColor.value.b ], i = [ 255 * this.ground.material.uniforms.bottomColor.value.r, 255 * this.ground.material.uniforms.bottomColor.value.g, 255 * this.ground.material.uniforms.bottomColor.value.b ], l = e.concat(i), a = this.colors[r].topColor.concat(this.colors[r].bottomColor);
+            var o = this;
+            let r = this.current + 1 > 6 ? 0 : this.current + 1;
+            let e = [ 255 * this.ground.material.uniforms.topColor.value.r, 255 * this.ground.material.uniforms.topColor.value.g, 255 * this.ground.material.uniforms.topColor.value.b ];
+            let i = [ 255 * this.ground.material.uniforms.bottomColor.value.r, 255 * this.ground.material.uniforms.bottomColor.value.g, 255 * this.ground.material.uniforms.bottomColor.value.b ];
+            let l = e.concat(i);
+            let a = this.colors[r].topColor.concat(this.colors[r].bottomColor);
             (0, n.TweenAnimation)(l, a, 5e3, "Linear", function(e, n) {
                 if (void 0 !== e) {
                     for (var i = 0; i < 6; ++i) e[i] = parseInt(e[i]);

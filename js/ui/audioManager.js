@@ -10,7 +10,7 @@ var o = function() {
     function e(e, o) {
         for (var t = 0; t < o.length; t++) {
             var n = o[t];
-            n.enumerable = n.enumerable || !1, n.configurable = !0, "value" in n && (n.writable = !0), 
+            n.enumerable = n.enumerable || !1, n.configurable = !0, "value" in n && (n.writable = !0),
             Object.defineProperty(e, n.key, n);
         }
     }
@@ -20,13 +20,17 @@ var o = function() {
 }(), t = require("../config"), n = function() {
     function n(o) {
         var i = this;
-        e(this, n), this.game = o, this.musicPool = [ "success", "combo1", "combo2", "combo3", "combo4", "combo5", "combo6", "combo7", "combo8", "scale_intro", "scale_loop", "restart", "fall", "fall_2", "pop", "icon", "sing", "store", "pay", "luban", "relax" ], 
-        this.musicPool.forEach(function(e, o) {
+        e(this, n), this.game = o, this.musicPool = [ "success", "combo1", "combo2", "combo3", "combo4", "combo5", "combo6", "combo7", "combo8", "scale_intro", "scale_loop", "restart", "fall", "fall_2", "pop", "icon", "sing", "store", "pay", "luban", "relax" ],
+        this.musicPool.forEach(function(e, index) {
             setTimeout(function(e) {
-                this[e] = wx.createInnerAudioContext(), this[e].src = t.AUDIO[e];
-            }.bind(i, e), 2 * o);
-        }), setTimeout(function() {
-            i.scale_loop.loop = !0, i.icon.onEnded(function() {
+                this[e] = wx.createInnerAudioContext();
+                this[e].src = t.AUDIO[e];
+            }.bind(i, e), 2 * index);
+        });
+
+        setTimeout(function() {
+            i.scale_loop.loop = !0;
+            i.icon.onEnded(function() {
                 i.icon.destroy();
             }), i.store.onPlay(function() {
                 i.store.before && i.store.before();
@@ -51,7 +55,7 @@ var o = function() {
             }), i.scale_intro.onEnded(function() {
                 "prepare" == i.game.bottle.status && i.scale_loop.play();
             });
-        }, 200);
+        }, 1000);
     }
     return o(n, [ {
         key: "resetAudio",

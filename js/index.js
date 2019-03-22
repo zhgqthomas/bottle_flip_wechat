@@ -148,6 +148,7 @@ var s = function (t) {
             key: "succeed",
             value: function (t) {
                 var e = this;
+                this.ground.changeColor();
                 if (++this.succeedTime, this.musicScore = !1, this.lastSucceedTime = Date.now(),
                 this.succeedTime % 15 == 0 && (t && t.noAnimation || this.ground.changeColor()),
                 this.blocksInUse.length >= 9) {
@@ -374,7 +375,7 @@ var s = function (t) {
                                     r.obj.visible = !1;
                                 }, 3e3);
                             }
-                            t.full2D.showBeginnerPage();
+                            // t.full2D.showBeginnerPage();
                             t.currentBlock = t.blocks[0], t.beginnerTimer = setTimeout(function () {
                                 if (("single" == e.mode && ("startPage" == e.stage || "friendRankList" == e.stage) || e.guider) && (e.guider && t.full2D.showBeginnerPage(),
                                     t.nextBlock.popup(), t.nextBlock.greenMaterial.color.setHex(6118749), t.nextBlock.whiteMaterial.color.setHex(11184810),
